@@ -16,7 +16,7 @@
 			{id_secteur?}
 			{id_rubrique?}
 			{recherche?}
-			{tri #ENV{par,#ENV{recherche}|?{points,num titre}},#GET{defaut_tri}}
+			{tri #ENV{par,#ENV{recherche}|?{points,date}},#GET{defaut_tri}}
 			{!id_article IN #ENV{articles_exclus,#ARRAY}}
 			{pagination #ENV{pagination,5}}
 		>
