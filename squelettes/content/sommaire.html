@@ -5,14 +5,35 @@
 
 	<div class="main">
 		[<div id="descriptif_site_spip">(#DESCRIPTIF_SITE_SPIP)</div>]
+		
 		#SET{exclus,#ARRAY}
-		<BOUCLE_art(ARTICLES){par hasard}{0,1}>
-		<INCLURE{fond=inclure/article-hero,id_article,env,ajax} />
-		#SET{exclus,#LISTE{#ID_ARTICLE}}
-		</BOUCLE_art>
-
-		<div class="liste long articles">
-		<INCLURE{fond=liste/articles-resume,articles_exclus=#GET{exclus},env,ajax} />
+		<B_une>
+		<div class="une">
+			<BOUCLE_une(ARTICLES){!par date}{0,1}>
+			#SET{exclus,#LISTE{#ID_ARTICLE}}
+			<article class="item">
+				<BOUCLE_illustration(DOCUMENTS){id_article}{extension IN jpg,png,gif}{par num titre,titre}{0,1}>
+				[(#FICHIER
+					|image_passe_partout{1200,600}
+					|image_recadre{1200,600}
+					|image_aplatir{jpg,ffffff}
+					|inserer_attribut{alt,#TITRE|sinon{#_une:TITRE|concat{" (illustration)"}}}
+					|adaptive_images{1200})]
+				</BOUCLE_illustration>
+				<div class="texte">
+					<h2 class="titre"><a href="#URL"><span[ class="(#EDIT{titre})"]>#TITRE</span></a></h2>
+					[<p class="[(#EDIT{texte}) ]intro">(#TEXTE|couper{200,'…'})</p>]
+				</div>
+			</article>
+			</BOUCLE_une>
+		</div>
+		</B_une>
+		
+		<div class="actus">
+			<h2>L’actu</h2>
+			<div class="liste long articles">
+			<INCLURE{fond=liste/articles-resume,articles_exclus=#GET{exclus},env,ajax} />
+			</div>
 		</div>
 	</div>
 

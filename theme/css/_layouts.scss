@@ -18,12 +18,13 @@ $layoutgala-aside2-selector: unquote("#extra");
 $layoutgala-footer-selector: unquote("#falsefooter");
 
 /* En grand écran, on passe à deux colonnes */
+/* On annule ça pour l'instant, tout en une colonne par défaut
 @include media($bp-large-up){
 	#content{
 		padding-right:flex-gutter();
 	}
 	@include layoutgala-33(flex-grid(12), flex-grid(9)+flex-gutter());
-}
+}*/
 
 /* Configuration hashgridesque */
 $default-column-count: 12;

@@ -6,9 +6,11 @@ $couleur-beige-clair:#e8e0d1;
 $couleur-sombre:#322c20;
 
 /* Palette fonctionnelle */
-$couleur-texte:black;
-$couleur-lien: $couleur-beige;
+$couleur-texte:#333;
+$couleur-lien: $couleur-rouge;
 
 /* Variables de typographie */
 $typo-line-height: 1.5;
 $typo-margin-vertical: ($typo-line-height)*1em;
+$typo-font-text:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif, sans;
+$typo-font-heading:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif, sans;
