@@ -8,7 +8,7 @@
 		[<div class="#EDIT{texte} texte surlignable">(#TEXTE|adaptive_images)</div>]
 		
 		<BOUCLE_prochain(EVENEMENTS){branche}{!evenement_passe}{0,1}{par date_debut}>#SET{id,#ID_EVENEMENT}</BOUCLE_prochain>
-		<div class="liste resultats evenements agenda_municipal">
+		<div class="liste resultats evenements agenda">
 		<INCLURE{fond=liste/evenements,env,ajax,debut_evenements=@#GET{id},pagination=10} />
 		</div>
 	</div>
