@@ -18,4 +18,5 @@
 	<necessite nom="pages" compatibilite="[1.0.5;]" />
 	<necessite nom="compositions" compatibilite="[3.3.6;]" />
 	<necessite nom="polyhier" compatibilite="[2.0.9;]" />
+	<necessite nom="agenda" compatibilite="[3.14.7;]" />
 </paquet>
