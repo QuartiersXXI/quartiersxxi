@@ -1,4 +1,4 @@
-<BOUCLE_content(RUBRIQUES){id_rubrique}>
+<BOUCLE_content(ARTICLES){id_article}>
 <article>
 	<header class="cartouche">
 		<h1 class="#EDIT{titre}">#TITRE</h1>
@@ -7,7 +7,7 @@
 	<div class="main">
 		[<div class="#EDIT{texte} texte surlignable">(#TEXTE|adaptive_images)</div>]
 		
-		<BOUCLE_prochain(EVENEMENTS){branche}{!evenement_passe}{0,1}{par date_debut}>#SET{id,#ID_EVENEMENT}</BOUCLE_prochain>
+		<BOUCLE_prochain(EVENEMENTS){id_article}{!evenement_passe}{0,1}{par date_debut}>#SET{id,#ID_EVENEMENT}</BOUCLE_prochain>
 		<div class="liste resultats evenements agenda">
 		<INCLURE{fond=liste/evenements,env,ajax,debut_evenements=@#GET{id},pagination=10} />
 		</div>
@@ -16,7 +16,7 @@
 	<footer>
 		[<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>]
 		[(#REM) On chercher la mise à jour d'événement la plus récente ]
-		<BOUCLE_maj(EVENEMENTS){branche}{!par maj}{0,1}>
+		<BOUCLE_maj(EVENEMENTS){id_article}{!par maj}{0,1}>
 		<p class="publication"><time pubdate="pubdate" datetime="[(#MAJ|date_iso)]"><:dernier_ajout:> : [(#MAJ|affdate_jourcourt)]</time></p>
 		</BOUCLE_maj>
 	</footer>
