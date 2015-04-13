@@ -10,9 +10,18 @@
 	<div class="main">
 		[<div class="#EDIT{texte} chapo">(#TEXTE|adaptive_images)</div>]
 
-		<BOUCLE_articles(ARTICLES){id_rubrique}{0,1}>
+		#SET{array_adoption,#ARRAY}
+		<BOUCLE_articles_adoption(ARTICLES){enfants #ENV{id_rubrique}}>
+		#SET{array_adoption,#GET{array_adoption}|push{#ID_ARTICLE}}
+		</BOUCLE_articles_adoption>
+		<BOUCLE_articles_biologiques(ARTICLES){id_rubrique}{0,1}>
+		#SET{array_adoption,#GET{array_adoption}|push{#ID_ARTICLE}}
+		</BOUCLE_articles_biologiques>
+		
+		
+		<BOUCLE_articles(ARTICLES){id_article IN #GET{array_adoption}}{0,1}>
 			<div class="liste articles">
-			<INCLURE{fond=liste/articles-resume,env,ajax,titre=<:articles_rubrique:>} />
+			<INCLURE{fond=liste/articles-resume-adoption,env,ajax,array_adoption=#GET{array_adoption}} />
 			</div>
 		</BOUCLE_articles>
 
