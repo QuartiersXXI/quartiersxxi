@@ -27,3 +27,8 @@
 	#spip-admin { display: none; }
 }
 
+/* masquer */
+.hide {
+  display: none;
+}
+
