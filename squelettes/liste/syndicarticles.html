@@ -1,0 +1,26 @@
+[(#REM) Articles issus de la syndication ]
+<B_articles>
+<hr>
+<div class="menu menu_articles">
+	#ANCRE_PAGINATION
+	<h2>Revue du web</h2>
+	<ul>
+		<BOUCLE_articles(SYNDIC_ARTICLES) {id_syndic} {age<180} {!par date} {pagination #ENV{pagination,5}}>
+		<li>
+		[(#ENV{titre_only}|=={"oui"}|oui)
+		<a href="#URL_PAGE{revue_web}#article#ID_SYNDIC_ARTICLE">#TITRE</a>
+		]
+		
+		[(#ENV{titre_only}|=={""}|oui)
+			<h3 id="article#ID_SYNDIC_ARTICLE">#TITRE</h3>
+			[<div class="introduction">(#DESCRIPTIF|activeliens|image_reduire{500,*})</div>]
+		]
+		</li>
+		<hr>
+		</BOUCLE_articles>
+	</ul>
+	[(#ENV{masquer_pagination}|=={""}|oui)
+		[<p class="pagination">(#PAGINATION)</p>]
+	]
+</div>
+</B_articles>
