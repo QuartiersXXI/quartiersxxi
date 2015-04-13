@@ -1,0 +1,13 @@
+<BOUCLE_hero(ARTICLES){id_article}>
+<div class="item hentry">
+	<div class="#EDIT{intro}">
+	<h1 class="entry-title clearfix"><a href="#URL_ARTICLE" rel="bookmark">
+	#INCLURE{fond=modeles/logo,id_article,width=380,height=210,titre=#TITRE}	
+	</h1>
+		<a href="#URL_ARTICLE" title="<:zcore:lire_la_suite|attribut_html:> <:zcore:lire_la_suite_de|attribut_html:> [(#TITRE|attribut_html)]">
+		<h4>#TITRE</h4>
+		[<div class="#EDIT{intro} introduction entry-content">(#INTRODUCTION{#ENV{coupe,200}})</div>]
+		</a>
+	</div>
+</div>
+</BOUCLE_hero>

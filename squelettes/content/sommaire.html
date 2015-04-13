@@ -12,14 +12,7 @@
 			<BOUCLE_une(ARTICLES){!par date}{0,1}>
 			#SET{exclus,#LISTE{#ID_ARTICLE}}
 			<article class="item">
-				<BOUCLE_illustration(DOCUMENTS){id_article}{extension IN jpg,png,gif}{par num titre,titre}{0,1}>
-				[(#FICHIER
-					|image_passe_partout{1200,600}
-					|image_recadre{1200,600}
-					|image_aplatir{jpg,ffffff}
-					|inserer_attribut{alt,#TITRE|sinon{#_une:TITRE|concat{" (illustration)"}}}
-					|adaptive_images{1200})]
-				</BOUCLE_illustration>
+				#INCLURE{fond=modeles/logo,id_article,width=1200,height=600,titre=#TITRE}
 				<div class="texte">
 					<h2 class="titre"><a href="#URL_ARTICLE"><span[ class="(#EDIT{titre})"]>#TITRE</span></a></h2>
 					[<p class="[(#EDIT{texte}) ]introduction">(#TEXTE|couper{200,'…'})</p>]
@@ -29,8 +22,13 @@
 		</div>
 		</B_une>
 		
+		[(#REM) <!-- exclure l'unique article agenda --> ]
+		<BOUCLE_article_agenda(EVENEMENTS){0,1}>
+		#SET{exclus,#LISTE{#ID_ARTICLE}}
+		</BOUCLE_article_agenda>
+		
 		<div class="actus liste long articles">
-		<INCLURE{fond=liste/articles-resume,titre=L’actu,articles_exclus=#GET{exclus},pagination=6,masquer_pagination=oui,env,ajax} />
+		<INCLURE{fond=liste/articles-resume-sommaire,titre=L’actu,articles_exclus=#GET{exclus},pagination=6,masquer_pagination=oui,env,ajax} />
 		</div>
 		
 		<BOUCLE_rubrique_agenda(RUBRIQUES){agenda=1}{0,1}>
