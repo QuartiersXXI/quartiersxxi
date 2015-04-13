@@ -28,8 +28,9 @@
 		</BOUCLE_article_agenda>
 		
 		<div class="actus liste long articles">
-		<INCLURE{fond=liste/articles-resume-sommaire,titre=L’actu,articles_exclus=#GET{exclus},pagination=6,masquer_pagination=oui,env,ajax} />
+		<INCLURE{fond=liste/articles-resume-sommaire,titre=L’actu,articles_exclus=#GET{exclus},pagination=6,masquer_pagination=oui} />
 		</div>
+		
 		
 		<BOUCLE_rubrique_agenda(RUBRIQUES){agenda=1}{0,1}>
 		<B_agenda>

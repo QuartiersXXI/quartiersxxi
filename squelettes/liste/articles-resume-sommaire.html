@@ -10,7 +10,7 @@
 	<h2>	
 		[(#ENV{titre}|sinon{#GRAND_TOTAL|singulier_ou_pluriel{info_1_article,info_nb_articles}})]
 	</h2>
-	<ul class="liste-items">
+	<ul class="liste-items troiscolonnes clearfix">
 		<BOUCLE_resultats(ARTICLES)
 			{id_article?}
 			{id_secteur?}
@@ -20,7 +20,7 @@
 			{!id_article IN #ENV{articles_exclus,#ARRAY}}
 			{pagination #ENV{pagination,5}}
 		>
-		<li class="item troiscolonnes">#INCLURE{fond=inclure/resume/article-sommaire,id_article}</li>
+		<li class="item">#INCLURE{fond=inclure/resume/article-sommaire,id_article}</li>
 		</BOUCLE_resultats>
 	</ul>
 	[(#ENV{masquer_pagination}|!={oui}|oui)

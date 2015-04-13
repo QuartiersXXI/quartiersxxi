@@ -33,6 +33,3 @@
   display: none;
 }
 
-/* à reprendre en sass dans le bon fichier */
-.troiscolonnes{width:33.333%; height:500px; float:left}
-

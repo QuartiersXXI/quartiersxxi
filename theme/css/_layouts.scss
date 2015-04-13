@@ -37,3 +37,12 @@ $default-vertical-guide-color: rgba(white,0);
 	@include setgrid(1);
 }
 
+/* on passe en 3 colonnes */
+ul.troiscolonnes {
+   @include outer-container;
+}
+
+ul.troiscolonnes li {
+    @include span-columns(4);
+    @include omega(3n);
+}
