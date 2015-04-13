@@ -1,0 +1,6 @@
+<composition>
+	<nom>Géographie</nom>
+	<description>Pour la rubrique contenant la carte géographique</description>
+	<icon>images/objet-liste-contenus-dates.png</icon>
+	<branche type="rubrique" composition="geographie" />
+</composition>

@@ -1,0 +1,50 @@
+<BOUCLE_content(RUBRIQUES){id_rubrique}>
+<article>
+	<header class="cartouche">
+		<h1 class="#EDIT{titre}">#TITRE</h1>
+	</header>
+
+	<div class="main">
+		[<div class="#EDIT{texte} texte surlignable">(#TEXTE|adaptive_images)</div>]
+		
+		<B_articles_adoption>
+		<ul>
+		<BOUCLE_articles_adoption(ARTICLES){enfants #ENV{id_rubrique}}>
+		<li><a href="#URL_ARTICLE">#TITRE</a></li>
+		</BOUCLE_articles_adoption>
+		</ul>
+		</B_articles_adoption>
+				
+		[(#INCLURE{fond=modeles/carte_gis,autocenterandzoom=oui,objets=rubrique_polyhobjets,id_rubrique=#ID_RUBRIQUE,limit=1000})]
+
+		
+		[<div class="#EDIT{texte} chapo">(#TEXTE|adaptive_images)</div>]
+
+		<BOUCLE_articles(ARTICLES){id_rubrique}{0,1}>
+			<div class="liste articles">
+			<INCLURE{fond=liste/articles-resume,env,ajax,titre=<:articles_rubrique:>} />
+			</div>
+		</BOUCLE_articles>
+
+		[(#REM) Si aucun article, affiche un plan de la rubrique ]
+		<B_sous_rubriques>
+		<div class="menu rubriques">
+			<ul class="menu-items menu-liste">
+				<BOUCLE_sous_rubriques(RUBRIQUES) {id_parent} {par num titre, titre}>
+				<li class="item menu-entree">
+					<a href="#URL_RUBRIQUE">[(#TITRE)]</a>
+				</li>
+				</BOUCLE_sous_rubriques>
+			</ul>
+			</div>
+		</B_sous_rubriques>
+	<//B_articles>
+	
+	</div>
+
+	<footer>
+		[<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>]
+		
+	</footer>
+</article>
+</BOUCLE_content>

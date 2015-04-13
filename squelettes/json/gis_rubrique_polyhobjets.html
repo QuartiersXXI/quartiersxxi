@@ -1,0 +1,16 @@
+#SET{array_rubriques,#ARRAY}
+<BOUCLE_articles(ARTICLES){branche_complete #ENV{id_rubrique}}>
+	<BOUCLE_parents(RUBRIQUES){gis}{parents_indirects}>
+	#SET{array_rubriques,#GET{array_rubriques}|push{#ID_RUBRIQUE}}
+	</BOUCLE_parents>
+</BOUCLE_articles>
+		
+		<BOUCLE_rub(RUBRIQUES){gis}{id_rubrique IN #GET{array_rubriques}}{0, #ENV{limit}}{","}>
+		{"type": "Feature",
+		"geometry": {"type": "Point", "coordinates": [#LON, #LAT]},
+		"id":"#ID_GIS",
+		"properties": {
+			[(#SET{titre,<a href="#URL_RUBRIQUE">[(#TITRE_GIS*|sinon{#TITRE*}|extraire_multi|supprimer_numero)]</a>})]"title":[(#GET{titre}|json_encode)],
+			"description":[(#DESCRIPTIF_GIS|sinon{#DESCRIPTIF}|json_encode)][
+			(#LOGO_GIS|gis_icon_properties)]
+		}}</BOUCLE_rub>
