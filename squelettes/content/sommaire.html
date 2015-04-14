@@ -24,7 +24,7 @@
 		
 		[(#REM) <!-- exclure l'unique article agenda --> ]
 		<BOUCLE_article_agenda(EVENEMENTS){0,1}>
-		#SET{exclus,#LISTE{#ID_ARTICLE}}
+		#SET{exclus,#GET{exclus}|push{#ID_ARTICLE}}
 		</BOUCLE_article_agenda>
 		
 		<div class="actus liste long articles">
