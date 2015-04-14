@@ -1,4 +1,5 @@
 [(#REM) Articles issus de la syndication ]
+<BOUCLE_revueweb(ARTICLES){page=revueweb}>#SET{url_revueweb,#URL_ARTICLE}</BOUCLE_revueweb>
 <B_articles>
 <hr>
 <div class="menu menu_articles">
@@ -8,7 +9,7 @@
 		<BOUCLE_articles(SYNDIC_ARTICLES) {id_syndic} {age<180} {!par date} {pagination #ENV{pagination,5}}>
 		<li>
 		[(#ENV{titre_only}|=={"oui"}|oui)
-		<a href="#URL_PAGE{revue_web}#article#ID_SYNDIC_ARTICLE">#TITRE</a>
+		<a href="#GET{url_revueweb}#article#ID_SYNDIC_ARTICLE">#TITRE</a>
 		]
 		
 		[(#ENV{titre_only}|=={""}|oui)
