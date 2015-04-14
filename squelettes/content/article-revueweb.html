@@ -1,0 +1,17 @@
+<BOUCLE_content(ARTICLES){id_article}>
+<article>
+	<header>
+		<h1 class="#EDIT{titre}">#TITRE</h1>
+	</header>
+
+	<div class="main">
+		[<div class="#EDIT{texte} texte surlignable">(#TEXTE|adaptive_images)</div>]
+		
+	<BOUCLE_web(SITES){id_syndic=1}>
+	<INCLURE{fond=liste/syndicarticles,id_syndic,pagination=10,ajax} />
+	</BOUCLE_web>
+	
+	</div>
+	
+</article>
+</BOUCLE_content>

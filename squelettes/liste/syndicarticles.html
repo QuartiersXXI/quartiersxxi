@@ -3,7 +3,7 @@
 <hr>
 <div class="menu menu_articles">
 	#ANCRE_PAGINATION
-	<h2>Revue du web</h2>
+	[(#ENV{titre_only}|=={"oui"}|oui)<h2>Revue du web</h2>]
 	<ul>
 		<BOUCLE_articles(SYNDIC_ARTICLES) {id_syndic} {age<180} {!par date} {pagination #ENV{pagination,5}}>
 		<li>

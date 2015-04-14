@@ -1,0 +1,6 @@
+<composition>
+	<nom>Revue du web</nom>
+	<description>Pour l'article contenant la revue du web</description>
+	<icon>images/objet-liste-contenus-dates.png</icon>
+	<branche type="article" composition="revueweb" />
+</composition>
