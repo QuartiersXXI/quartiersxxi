@@ -1,20 +1,22 @@
-[(#REM) Articles issus de la syndication ]
+[(#REM) Articles issus de la syndication : revue de Web ]
 <BOUCLE_revueweb(ARTICLES){page=revueweb}>#SET{url_revueweb,#URL_ARTICLE}</BOUCLE_revueweb>
 <B_articles>
 <hr>
 <div class="menu menu_articles">
 	#ANCRE_PAGINATION
-	[(#ENV{titre_only}|=={"oui"}|oui)<h2>Revue du web</h2>]
+	[(#ENV{titre_only}|oui)<h2>Revue du web</h2>]
 	<ul>
 		<BOUCLE_articles(SYNDIC_ARTICLES) {id_syndic} {age<180} {!par date} {pagination #ENV{pagination,5}}>
 		<li>
-		[(#ENV{titre_only}|=={"oui"}|oui)
-		<a href="#GET{url_revueweb}#article#ID_SYNDIC_ARTICLE">#TITRE</a>
+		[(#ENV{titre_only}|oui)
+		<a href="[(#DESCRIPTIF|seenthis_premier_lien{#URL_ARTICLE})]">#TITRE</a>
+		[((#DESCRIPTIF|seenthis_premier_lien{#URL_ARTICLE}|replace{^http.*//}|replace{/.*$}))]
 		]
 		
-		[(#ENV{titre_only}|=={""}|oui)
-			<a id="article#ID_SYNDIC_ARTICLE"></a>
-			[<div class="introduction">(#DESCRIPTIF|activeliens|image_reduire{500,*})</div>]
+		[(#ENV{titre_only}|non)
+			<h2><a href="[(#DESCRIPTIF|seenthis_premier_lien{#URL_ARTICLE})]">#TITRE</a></h2>
+			[((#DATE|affdate_court|replace{' ',&nbsp;})[, (#DESCRIPTIF|seenthis_premier_lien{#URL_ARTICLE}|replace{^http.*//(www\.)*?}|replace{/.*$})])]
+			[<div class="introduction"  id="article#ID_SYNDIC_ARTICLE">(#DESCRIPTIF|extraire_balises{blockquote}|join|image_reduire{500,*})</div>]
 		]
 		</li>
 		<hr>

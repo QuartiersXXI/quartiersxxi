@@ -1,5 +1,14 @@
 <?php
 
-function activeliens($texte){
-	    return preg_replace('@([^>"])(https?://[a-z0-9\./+,%#_-]+)@i', '$1<br /><a href="$2" class="spip_out">$2</a>', $texte);
+/*
+ * Pour la syndication de seenthis on extraie le premier lien (s'il existe)
+ * pour faire un lien direct
+ */
+function seenthis_premier_lien($desc, $url_defaut){
+	$liens = extraire_balises($desc, 'a');
+	$url = isset($liens[1])
+		? extraire_attribut($liens[1], 'href')
+		: $url_defaut;
+	return quote_amp($url);
 }
+
