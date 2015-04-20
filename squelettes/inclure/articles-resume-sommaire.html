@@ -1,0 +1,15 @@
+#SET{exclus,#ARRAY}
+<BOUCLE_unebis(ARTICLES){!par date}{0,1}>
+		#SET{exclus,#GET{exclus}|push{#ID_ARTICLE}}
+</BOUCLE_unebis>
+<nav>
+	[(#REM) <!-- exclure l'unique article agenda --> ]
+		<BOUCLE_article_agenda(EVENEMENTS){0,1}>
+		#SET{exclus,#GET{exclus}|push{#ID_ARTICLE}}
+		</BOUCLE_article_agenda>
+		
+		<div class="actus liste long articles">
+		<INCLURE{fond=liste/articles-resume-sommaire,titre=L’actu,articles_exclus=#GET{exclus},pagination=4,masquer_pagination=oui} />
+		</div>
+
+<nav>

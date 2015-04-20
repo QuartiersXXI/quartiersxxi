@@ -10,7 +10,7 @@
 	<h2>	
 		[(#ENV{titre}|sinon{#GRAND_TOTAL|singulier_ou_pluriel{info_1_article,info_nb_articles}})]
 	</h2>
-	<ul class="liste-items troiscolonnes clearfix">
+	<ul class="liste-items deuxcolonnes clearfix">
 		<BOUCLE_resultats(ARTICLES)
 			{id_article?}
 			{id_secteur?}

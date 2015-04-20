@@ -5,12 +5,9 @@
 
 	<div class="main">
 		[<div id="descriptif_site_spip">(#DESCRIPTIF_SITE_SPIP)</div>]
-		
-		#SET{exclus,#ARRAY}
 		<B_une>
 		<div class="une">
 			<BOUCLE_une(ARTICLES){!par date}{0,1}>
-			#SET{exclus,#LISTE{#ID_ARTICLE}}
 			<article class="item">
 				#INCLURE{fond=modeles/logo,id_article,width=1200,height=600,titre=#TITRE}
 				<div class="texte">
@@ -22,42 +19,7 @@
 		</div>
 		</B_une>
 		
-		[(#REM) <!-- exclure l'unique article agenda --> ]
-		<BOUCLE_article_agenda(EVENEMENTS){0,1}>
-		#SET{exclus,#GET{exclus}|push{#ID_ARTICLE}}
-		</BOUCLE_article_agenda>
-		
-		<div class="actus liste long articles">
-		<INCLURE{fond=liste/articles-resume-sommaire,titre=L’actu,articles_exclus=#GET{exclus},pagination=6,masquer_pagination=oui} />
-		</div>
-		
-		
-		<BOUCLE_rubrique_agenda(RUBRIQUES){agenda=1}{0,1}>
-		<B_agenda>
-		<div class="agenda liste evenements evenements-futurs">
-			<h2>#TITRE</h2>
-			<ul class="liste-items">
-				<BOUCLE_agenda(EVENEMENTS){!evenement_passe}{par date_debut}{0,4}>
-				<li class="item">
-					[(#SET{annee,#DATE_DEBUT|annee})][(#SET{mois,#DATE_DEBUT|nom_mois})][(#SET{jour,#DATE_DEBUT|jour})]
-					<article class="entry evenement vevent id_#ID_EVENEMENT" itemscope itemtype="http://schema.org/Event">
-						<meta itemprop="startDate" content="[(#DATE_DEBUT|date_iso)]" />
-						<meta itemprop="endDate" content="[(#DATE_FIN|date_iso)]" />
-						<p class="publication">
-							[<time>(#DATE_DEBUT|agenda_affdate_debut_fin{#DATE_FIN,#HORAIRE*,'hcal'})</time>]
-						</p>
-						<strong class="summary titre entry-title" itemprop="name">
-							<a href="#URL_EVENEMENT" itemprop="url">#TITRE</a>
-						</strong>
-						[<div class="entry-content introduction" itemprop="description">(#DESCRIPTIF|couper{200, '…'})</div>]
-					</article>
-				</li>
-				</BOUCLE_agenda>
-			</ul>
-			<a class="tout" href="#URL_RUBRIQUE">Voir tout l’agenda</a>
-		</div>
-		</B_agenda>
-		</BOUCLE_rubrique_agenda>
 	</div>
 
 </section>
+

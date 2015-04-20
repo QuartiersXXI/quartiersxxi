@@ -1,0 +1,26 @@
+<BOUCLE_rubrique_agenda(RUBRIQUES){agenda=1}{0,1}>
+		<B_agenda>
+		<div class="agenda liste evenements evenements-futurs">
+			<h2>#TITRE</h2>
+			<ul class="liste-items">
+				<BOUCLE_agenda(EVENEMENTS){!evenement_passe}{par date_debut}{0,4}>
+				<li class="item">
+					[(#SET{annee,#DATE_DEBUT|annee})][(#SET{mois,#DATE_DEBUT|nom_mois})][(#SET{jour,#DATE_DEBUT|jour})]
+					<article class="entry evenement vevent id_#ID_EVENEMENT" itemscope itemtype="http://schema.org/Event">
+						<meta itemprop="startDate" content="[(#DATE_DEBUT|date_iso)]" />
+						<meta itemprop="endDate" content="[(#DATE_FIN|date_iso)]" />
+						<p class="publication">
+							[<time>(#DATE_DEBUT|agenda_affdate_debut_fin{#DATE_FIN,#HORAIRE*,'hcal'})</time>]
+						</p>
+						<strong class="summary titre entry-title" itemprop="name">
+							<a href="#URL_EVENEMENT" itemprop="url">#TITRE</a>
+						</strong>
+						[<div class="entry-content introduction" itemprop="description">(#DESCRIPTIF|couper{200, '…'})</div>]
+					</article>
+				</li>
+				</BOUCLE_agenda>
+			</ul>
+			<a class="tout" href="#URL_RUBRIQUE">Voir tout l’agenda</a>
+		</div>
+		</B_agenda>
+</BOUCLE_rubrique_agenda>

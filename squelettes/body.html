@@ -43,12 +43,22 @@
 						<INCLURE{fond=content/#ENV{type-page},env} />
 					</div>
 				</div>
+				
+				[(#ENV{type-page}|=={sommaire}|oui)
+				<div id="contentbis">
+				<aside class="aside primary" id="asideprimary">
+					<INCLURE{fond=inclure/articles-resume-sommaire,exclus} />
+				</aside>
+				]
 				<aside class="aside secondary" id="aside">
 					<INCLURE{fond=aside/#ENV{type-page},env} />
 				</aside>
+				[(#ENV{type-page}|=={sommaire}|oui) </div>]
+				
 				<aside class="extra secondary" id="extra">
 					<INCLURE{fond=extra/#ENV{type-page},env} />
 				</aside>
+				
 			</div>
 		</div>
 		
