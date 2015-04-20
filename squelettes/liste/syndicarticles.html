@@ -1,7 +1,6 @@
 [(#REM) Articles issus de la syndication : revue de Web ]
 <BOUCLE_revueweb(ARTICLES){page=revueweb}>#SET{url_revueweb,#URL_ARTICLE}</BOUCLE_revueweb>
 <B_articles>
-<hr>
 <div class="menu menu_articles">
 	#ANCRE_PAGINATION
 	[(#ENV{titre_only}|oui)<h2>Revue du web</h2>]
@@ -19,7 +18,6 @@
 			[<div class="introduction"  id="article#ID_SYNDIC_ARTICLE">(#DESCRIPTIF|extraire_balises{blockquote}|join|image_reduire{500,*})</div>]
 		]
 		</li>
-		<hr>
 		</BOUCLE_articles>
 	</ul>
 	[(#ENV{masquer_pagination}|=={""}|oui)
