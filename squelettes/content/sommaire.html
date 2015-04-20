@@ -9,7 +9,7 @@
 		<div class="une">
 			<BOUCLE_une(ARTICLES){!par date}{0,1}>
 			<article class="item">
-				#INCLURE{fond=modeles/logo,id_article,width=1200,height=600,titre=#TITRE}
+				#INCLURE{fond=logo/article,id_article,width=1200,height=600,titre=#TITRE}
 				<div class="texte">
 					<h2 class="titre"><a href="#URL_ARTICLE"><span[ class="(#EDIT{titre})"]>#TITRE</span></a></h2>
 					[<p class="[(#EDIT{texte}) ]introduction">(#TEXTE|couper{200,'…'})</p>]
