@@ -1,26 +1,51 @@
-<BOUCLE_rubrique_agenda(RUBRIQUES){agenda=1}{0,1}>
-		<B_agenda>
-		<div class="agenda liste evenements evenements-futurs">
-			<h2>#TITRE</h2>
-			<ul class="liste-items">
-				<BOUCLE_agenda(EVENEMENTS){!evenement_passe}{par date_debut}{0,4}>
-				<li class="item">
-					[(#SET{annee,#DATE_DEBUT|annee})][(#SET{mois,#DATE_DEBUT|nom_mois})][(#SET{jour,#DATE_DEBUT|jour})]
-					<article class="entry evenement vevent id_#ID_EVENEMENT" itemscope itemtype="http://schema.org/Event">
-						<meta itemprop="startDate" content="[(#DATE_DEBUT|date_iso)]" />
-						<meta itemprop="endDate" content="[(#DATE_FIN|date_iso)]" />
-						<p class="publication">
-							[<time>(#DATE_DEBUT|agenda_affdate_debut_fin{#DATE_FIN,#HORAIRE*,'hcal'})</time>]
-						</p>
-						<strong class="summary titre entry-title" itemprop="name">
-							<a href="#URL_EVENEMENT" itemprop="url">#TITRE</a>
-						</strong>
-						[<div class="entry-content introduction" itemprop="description">(#DESCRIPTIF|couper{200, '…'})</div>]
-					</article>
-				</li>
-				</BOUCLE_agenda>
-			</ul>
-			<a class="tout" href="#URL_RUBRIQUE">Voir tout l’agenda</a>
-		</div>
-		</B_agenda>
-</BOUCLE_rubrique_agenda>
+ <div class="agenda panel panel-default">
+            
+            <div class="panel-heading">
+              <h3 class="panel-title">AGENDA</h3>
+            </div>
+
+            <div class="panel-body">
+            #SET{nb_evenements,10}
+
+            [(#REM)<!-- evenements à venir --->]
+            <BOUCLE_vevent_avenir(EVENEMENTS){age<=0}{statut=publie}{par date_debut}{inverse}{0,10}>
+              <div class="evenement" style="background:yellow">
+                <p class="surtitre">[
+                  <span class="strong">(#DATE_DEBUT|agenda_affdate_debut_fin{#DATE_FIN,''})</span>]
+                  [(#LIEU)]
+                </p>
+                <h3><a href="#URL_EVENEMENT">#TITRE</a></h3>
+                [(#SET{txt,[(#INFO_TEXTE{article,#ID_ARTICLE}|couper{120})]})]
+                [<p>(#DESCRIPTIF|couper{120}|sinon{#GET{txt}})</p>]
+              </div> <!-- /.evenement -->
+            </BOUCLE_vevent_avenir>
+            	[(#REM) On déduit les evenements à venir]
+            	#SET{nb_evenements,#EVAL{10-#GRAND_TOTAL}}
+            </B_vevent_avenir>
+            
+            [(#REM)<!-- evenements passés --->]
+            <BOUCLE_vevent_passe(EVENEMENTS){age>0}{statut=publie}{par date_debut}{inverse}{0,#GET{nb_evenements}}>
+              <div class="evenement evenement-passe" style="background:#888">
+                <p class="surtitre">[
+                  <span class="strong">(#DATE_DEBUT|agenda_affdate_debut_fin{#DATE_FIN,''})</span>]
+                  [(#LIEU)]
+                </p>
+                <h3><a href="#URL_EVENEMENT">#TITRE</a></h3>
+                [(#SET{txt,[(#INFO_TEXTE{article,#ID_ARTICLE}|couper{120})]})]
+                [<p>(#DESCRIPTIF|couper{120}|sinon{#GET{txt}})</p>]
+              </div> <!-- /.evenement -->
+            </BOUCLE_vevent_passe>
+            
+            </div>
+
+            <div class="panel-footer">
+              [<a href="(#URL_PAGE{agenda})">Tous les rendez-vous <i class="fa fa-arrow-circle-right"></i></a>]
+            </div>
+            
+            
+            <div class="panel-shadows">
+            	<div class="shadow-top"></div>
+            	<div class="shadow-bottom"></div>
+            </div>
+
+</div> <!-- /.agenda -->

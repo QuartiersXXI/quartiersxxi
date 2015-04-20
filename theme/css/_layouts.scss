@@ -44,11 +44,13 @@ $default-vertical-guide-color: rgba(white,0);
   #asideprimary {
     @include span-columns(8);
   }
-
-  #contentbis .secondary {
-    @include span-columns(4);
-  }
 }
+
+#contentbis .secondary {
+    @include span-columns(4);  
+}
+
+.agenda .panel-body{ height:400px; overflow:auto; }
 
 
 /* 3 colonnes */
