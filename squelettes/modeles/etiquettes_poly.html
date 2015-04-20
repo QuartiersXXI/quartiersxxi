@@ -1,0 +1,11 @@
+[(#REM)
+	Affiche les etiquettes des rubriques de l'article en polyhierarchie du secteur 30
+]<BOUCLE_article(ARTICLES){id_article}>
+<B_etiquettes>
+<span class="etiquettes">
+	<BOUCLE_etiquettes(RUBRIQUES) {parents}{id_secteur=30}>
+	<span lang="#LANG" xml:lang="#LANG" dir="#LANG_DIR"[ class="(#EXPOSE)"]>&#91;<a href="#URL_RUBRIQUE" [ title="(#TITRE|attribut_html|couper{80})"]>[(#TITRE)]</a>&#93;</span>
+	</BOUCLE_etiquettes>
+</span>
+</B_etiquettes>
+</BOUCLE_article>

@@ -9,6 +9,14 @@
 		
 		[(#REM) Inclure le modele des liens de traductions ]
 		<div class="postmeta">
+			<p class="info-publi">
+			[<span class="auteurs"><:par_auteur:> (#LESAUTEURS)</span>]
+			<br><abbr class="published" title="[(#DATE|date_iso)]">Publié le [(#DATE|nom_jour) ][(#DATE|affdate)]</abbr>
+			[(#MAJ|!={#DATE}|oui)
+			<br><abbr class="published" title="[(#DATE|date_iso)]">Modifié le [(#MAJ|nom_jour) ][(#MAJ|affdate)]</abbr>
+			]
+			</p>
+			#MODELE{etiquettes_poly}
 			#MODELE{article_traductions}
 			<BOUCLE_nb_commentaires(FORUMS) {id_article}{plat} />[(#TOTAL_BOUCLE|oui)
 			<span class="comments">
