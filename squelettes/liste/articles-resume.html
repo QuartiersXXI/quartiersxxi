@@ -2,7 +2,8 @@
 	num titre,1,
 	date,#ENV{date_sens,-1},
 	id_article,1,
-	points,-1
+	points,-1,
+	visites,-1,
 }})]
 
 <B_resultats>
@@ -20,7 +21,7 @@
 			{!id_article IN #ENV{articles_exclus,#ARRAY}}
 			{pagination #ENV{pagination,5}}
 		>
-		<li class="item">#INCLURE{fond=inclure/resume/article,id_article}</li>
+		<li class="item">#INCLURE{fond=inclure/resume/article,id_article,largeur_logo,hauteur_logo}</li>
 		</BOUCLE_resultats>
 	</ul>
 	[(#ENV{masquer_pagination}|!={oui}|oui)

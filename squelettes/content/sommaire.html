@@ -5,21 +5,55 @@
 
 	<div class="main">
 		[<div id="descriptif_site_spip">(#DESCRIPTIF_SITE_SPIP)</div>]
+		
+		#SET{exclus,#LISTE}
 		<B_une>
 		<div class="une">
 			<BOUCLE_une(ARTICLES){!par date}{0,1}>
 			<article class="item">
-				#INCLURE{fond=logo/article,id_article,width=1200,height=600,titre=#TITRE}
+				<BOUCLE_illustration(DOCUMENTS){id_article}{extension IN jpg,png,gif}{par num titre,titre}{0,1}>
+					[(#FICHIER
+						|image_passe_partout{#ENV{width,1200},#ENV{height,600}}
+						|image_recadre{#ENV{width,1200},#ENV{height,600}}
+						|image_aplatir{jpg,ffffff}
+						|inserer_attribut{alt,#TITRE|sinon{#ENV{titre}|concat{" (illustration)"}}}
+						|adaptive_images{#ENV{width,1200}})]
+					[(#ID_ARTICLE|document_vu{article,#ID_DOCUMENT})]
+				</BOUCLE_illustration>
 				<div class="texte">
 					<h2 class="titre"><a href="#URL_ARTICLE"><span[ class="(#EDIT{titre})"]>#TITRE</span></a></h2>
 					[<p class="[(#EDIT{texte}) ]introduction">(#TEXTE|couper{200,'…'})</p>]
 				</div>
 			</article>
+			#SET{exclus,#LISTE{#ID_ARTICLE}}
 			</BOUCLE_une>
 		</div>
 		</B_une>
 		
+		[(#REM) Toujours exclure l'article d'agenda ]
+		<BOUCLE_article_agenda(EVENEMENTS){0,1}>
+		#SET{exclus,#GET{exclus}|push{#ID_ARTICLE}}
+		</BOUCLE_article_agenda>
+		
+		<div class="toutes_les_news">
+			<div class="liste articles actus">
+				<INCLURE{fond=liste/articles-resume,
+					articles_exclus=#GET{exclus},
+					titre=L’actu,
+					largeur_logo=380,hauteur_logo=210,
+					pagination=4,masquer_pagination=oui} />
+			</div>
+			
+			<div class="autres_news">
+				<div class="liste evenements agenda">
+					<INCLURE{fond=inclure/rubrique_agenda} />
+				</div>
+				
+				<div class="liste articles plus_lus">
+					<INCLURE{fond=liste/articles-resume,articles_exclus=#GET{exclus},par=visites,titre=Les plus lus,pagination=5,masquer_pagination=oui} />
+				</div>
+			</div>
+		</div>
 	</div>
-
 </section>
 

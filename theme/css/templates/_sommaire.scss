@@ -1,0 +1,34 @@
+
+/* Styles propres à la page d'accueil */
+.page_sommaire{
+	/* Les plus lus n'ont que le titre */
+	.plus_lus{
+		.spip_logos, .publication, .introduction, .postmeta{
+			display:none;
+		}
+		strong{
+			font-weight:normal;
+		}
+	}
+	
+	/* En grand écran, on passe les actus et le reste en colonnes */
+	@include media($bp-large-up){
+		.toutes_les_news{
+			@include row();
+		}
+		.actus{
+			@include span-columns(8);
+			
+			.liste-items{
+				@include row();
+			}
+			.item{
+				@include span-columns(4 of 8);
+				@include omega(2n);
+			}
+		}
+		.autres_news{
+			@include span-columns(4);
+		}
+	}
+}
