@@ -12,7 +12,7 @@
 	}
 	
 	/* En grand écran, on passe les actus et le reste en colonnes */
-	@include media($bp-large-up){
+	@include media($bp-medium-plus-up){
 		.toutes_les_news{
 			@include row();
 		}
