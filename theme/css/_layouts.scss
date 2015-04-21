@@ -37,37 +37,4 @@ $default-vertical-guide-color: rgba(white,0);
 	@include setgrid(1);
 }
 
-
-#contentbis {
-  @include outer-container;
-
-  #asideprimary {
-    @include span-columns(8);
-  }
-}
-
-#contentbis .secondary {
-    @include span-columns(4);  
-}
-
 .agenda .panel-body{ height:400px; overflow:auto; }
-
-
-/* 3 colonnes */
-ul.troiscolonnes {
-   @include outer-container;
-}
-
-ul.troiscolonnes li {
-    @include span-columns(4);
-    @include omega(3n);
-}
-
-/* 2 colonnes */
-
-ul.deuxcolonnes li {
-    @include span-columns(4 of 8);
-    @include omega(2n);
-}
-
-
