@@ -1,5 +1,53 @@
 
 @font-face {
+    font-family: 'Roboto';
+    src: url('../polices/roboto-regular.eot');
+    src: url('../polices/roboto-regular.eot?#iefix') format('embedded-opentype'),
+         url('../polices/roboto-regular.woff2') format('woff2'),
+         url('../polices/roboto-regular.woff') format('woff'),
+         url('../polices/roboto-regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../polices/roboto-thin.eot');
+    src: url('../polices/roboto-thin.eot?#iefix') format('embedded-opentype'),
+         url('../polices/roboto-thin.woff2') format('woff2'),
+         url('../polices/roboto-thin.woff') format('woff'),
+         url('../polices/roboto-thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    src: url('../polices/merriweather-regular.eot');
+    src: url('../polices/merriweather-regular.eot?#iefix') format('embedded-opentype'),
+         url('../polices/merriweather-regular.woff2') format('woff2'),
+         url('../polices/merriweather-regular.woff') format('woff'),
+         url('../polices/merriweather-regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    src: url('../polices/merriweather-light.eot');
+    src: url('../polices/merriweather-light.eot?#iefix') format('embedded-opentype'),
+         url('../polices/merriweather-light.woff2') format('woff2'),
+         url('../polices/merriweather-light.woff') format('woff'),
+         url('../polices/merriweather-light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+
+}
+
+@font-face {
   font-family: 'icons';
   src: url('../polices/icons.eot?44548243');
   src: url('../polices/icons.eot?44548243#iefix') format('embedded-opentype'),
@@ -9,6 +57,7 @@
   font-weight: normal;
   font-style: normal;
 }
+
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
 /* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
 /*
@@ -19,4 +68,3 @@
   }
 }
 */
-

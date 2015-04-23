@@ -1,16 +1,15 @@
 
 /* Palette de couleur */
-$couleur-rouge:#d44423;
-$couleur-beige:#c7b698;
-$couleur-beige-clair:#e8e0d1;
-$couleur-sombre:#322c20;
+$couleur-beige:#dee0df;
+$couleur-marron:#7a534d;
+$couleur-fonce:#514f4f;
 
 /* Palette fonctionnelle */
 $couleur-texte:#333;
-$couleur-lien: $couleur-rouge;
+$couleur-lien: $couleur-marron;
 
 /* Variables de typographie */
 $typo-line-height: 1.5;
 $typo-margin-vertical: ($typo-line-height)*1em;
-$typo-font-text:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif, sans;
-$typo-font-heading:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif, sans;
+$typo-font-text: Merriweather, Georgia, serif;
+$typo-font-heading: Roboto, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif, sans;
