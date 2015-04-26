@@ -45,9 +45,12 @@
 			</div>
 			
 			<div class="autres_news">
-				<div class="liste evenements agenda">
-					<INCLURE{fond=inclure/rubrique_agenda} />
+				<BOUCLE_rubrique_agenda(RUBRIQUES){agenda=1}{0,1}>
+				<div class="agenda liste evenements evenements-futurs">
+					<INCLURE{fond=liste/evenements-futurs,titre=#TITRE,pagination=4,masquer_pagination=oui}>
+					<a class="tout" href="#URL_RUBRIQUE">Voir tout l’agenda</a>
 				</div>
+				</BOUCLE_rubrique_agenda>
 				
 				<div class="liste articles plus_lus">
 					<INCLURE{fond=liste/articles-resume,articles_exclus=#GET{exclus},par=visites,titre=Les plus lus,pagination=5,masquer_pagination=oui} />
