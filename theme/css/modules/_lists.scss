@@ -18,3 +18,13 @@
 		}
 	}
 }
+
+/* Les plus lus n'ont que le titre */
+.plus_lus{
+	.spip_logos, .publication, .introduction, .postmeta{
+		display:none;
+	}
+	strong{
+		font-weight:normal;
+	}
+}
