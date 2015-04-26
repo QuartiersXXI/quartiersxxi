@@ -13,12 +13,36 @@
 
 @font-face {
     font-family: 'Roboto';
+    src: url('../polices/roboto-light.eot');
+    src: url('../polices/roboto-light.eot?#iefix') format('embedded-opentype'),
+         url('../polices/roboto-light.woff2') format('woff2'),
+         url('../polices/roboto-light.woff') format('woff'),
+         url('../polices/roboto-light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Roboto';
     src: url('../polices/roboto-thin.eot');
     src: url('../polices/roboto-thin.eot?#iefix') format('embedded-opentype'),
          url('../polices/roboto-thin.woff2') format('woff2'),
          url('../polices/roboto-thin.woff') format('woff'),
          url('../polices/roboto-thin.ttf') format('truetype');
     font-weight: 100;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('robotocondensed-regular.eot');
+    src: url('robotocondensed-regular.eot?#iefix') format('embedded-opentype'),
+         url('robotocondensed-regular.woff2') format('woff2'),
+         url('robotocondensed-regular.woff') format('woff'),
+         url('robotocondensed-regular.ttf') format('truetype');
+    font-weight: normal;
     font-style: normal;
 
 }
