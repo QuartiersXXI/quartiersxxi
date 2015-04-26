@@ -7,6 +7,9 @@
 	font-weight:100;
 	text-transform:uppercase;
 	
+	.container{
+		position:relative;
+	}
 	.menu-items{	
 		@extend .list-none;
 		margin:0;
@@ -15,9 +18,18 @@
 		display:block;
 		color:$couleur-texte;
 	}
+	.search {
+		/* On enlève ça pour l'instant en attendant de trouver comme l'afficher mais mieux */
+		label,input.submit{
+			@extend .offscreen;
+		}
+		input.text{
+			width:100%;
+		}
+	}
 	
 	@include media($bp-medium-plus-up){
-		.menu-items{
+		/*.menu-items{
 			line-height:0;
 			text-align:justify;
 			
@@ -27,20 +39,36 @@
 				vertical-align:top;
 				width:99%;
 			}
+		}*/
+		a{
+			display:inline;
 		}
 		.item{
 			display:inline-block;
 			line-height:$typo-line-height;
 			margin:0;
 			padding:0;
-			vertical-align:top;
+			/*vertical-align:top;
 			
 			&:first-child{
 				text-align:left;
 			}
 			&:last-child{
 				text-align:right;
+			}*/
+			
+			&:after{
+				content: " - ";
 			}
+			&:last-child:after{
+				content:'';
+			}
+		}
+		.search{
+			position:absolute;
+			right:0;
+			top:-0.1em;
+			width:12em;
 		}
 	}
 }
