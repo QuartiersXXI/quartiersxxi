@@ -36,7 +36,7 @@ a{
 		text-decoration:underline;
 	}
 	&:focus{
-		background-color:$couleur-marron !important;
+		background-color:$couleur-lien !important;
 		color:white !important;
 		outline:0;
 	}
