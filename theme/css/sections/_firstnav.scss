@@ -2,6 +2,10 @@
 /* Menu principal */
 .firstnav{
 	clear:both;
+	margin-bottom:$typo-margin-vertical;
+	font-family:$typo-font-heading;
+	font-weight:100;
+	text-transform:uppercase;
 	
 	.menu-items{	
 		@extend .list-none;
@@ -9,6 +13,7 @@
 	}
 	a{
 		display:block;
+		color:$couleur-texte;
 	}
 	
 	@include media($bp-medium-plus-up){

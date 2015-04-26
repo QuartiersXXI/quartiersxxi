@@ -10,10 +10,6 @@
 	.item{
 		float:none;
 	}
-	/* Masquage temporaire du formulaire de recherche tant qu'on ne sait pas où il va aller */
-	.search{
-		display:none;
-	}
 	
 	@include media($bp-medium-up){
 		.item{

@@ -21,6 +21,12 @@ h6,
 .h6{
 	font-family:$typo-font-heading;
 }
+h1{
+	font-weight:bold;
+}
+h2{
+	font-weight:100;
+}
 
 a{
 	color:$couleur-lien;
@@ -30,7 +36,7 @@ a{
 		text-decoration:underline;
 	}
 	&:focus{
-		background-color:$couleur-lien !important;
+		background-color:$couleur-marron !important;
 		color:white !important;
 		outline:0;
 	}

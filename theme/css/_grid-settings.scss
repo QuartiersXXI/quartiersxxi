@@ -10,4 +10,4 @@ $bp-defaut-up: new-breakpoint(min-width 0);
 $bp-medium-up: new-breakpoint(min-width $screen-medium);
 $bp-medium-plus-up: new-breakpoint(min-width $screen-medium-plus);
 $bp-large-up: new-breakpoint(min-width $screen-large);
-$visual-grid:true; // afficher la grille pour le debug
+$visual-grid:false; // afficher la grille pour le debug
