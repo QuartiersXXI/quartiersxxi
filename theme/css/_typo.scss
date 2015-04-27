@@ -5,6 +5,10 @@ body{
 	font-family:$typo-font-text;
 	font-weight:300;
 	background-color:$couleur-beige;
+	
+	@include media($bp-medium-up){
+		background:$couleur-beige url('../images/fond-immeubles.png') 47% top no-repeat;
+	}
 }
 
 h1,
