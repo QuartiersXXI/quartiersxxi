@@ -19,5 +19,4 @@
 	<necessite nom="compositions" compatibilite="[3.3.6;]" />
 	<necessite nom="polyhier" compatibilite="[2.0.9;]" />
 	<necessite nom="agenda" compatibilite="[3.14.7;]" />
-	<necessite nom="logo_auto" compatibilite="[0.2.1;]" />
 </paquet>
