@@ -2,9 +2,15 @@
 /* Entête du site */
 .header{
 	h1{
-		background:transparent url('../images/logo-264.png') center center no-repeat;
+		background:transparent url('../images/logo-262.png') center center no-repeat;
 		font-size:1em;
-		height:15em;
+		height:12em;
 		text-indent:-10000px;
+	}
+	
+	@include media($bp-medium-plus-up){
+		h1{
+			height:16.5em;
+		}
 	}
 }

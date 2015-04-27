@@ -6,7 +6,7 @@ body{
 	font-weight:300;
 	background-color:$couleur-beige;
 	
-	@include media($bp-medium-up){
+	@include media($bp-medium-plus-up){
 		background:$couleur-beige url('../images/fond-immeubles.png') 47% top no-repeat;
 	}
 }
