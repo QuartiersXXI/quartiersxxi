@@ -3,7 +3,6 @@
 body{
 	color:$couleur-texte;
 	font-family:$typo-font-text;
-	font-weight:300;
 	background-color:$couleur-beige;
 	
 	@include media($bp-medium-plus-up){
