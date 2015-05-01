@@ -1,0 +1,21 @@
+
+/* Les choses à mettre en avant (accueil ou rubrique) */
+.focus{
+	border:($typo-margin-vertical/2) solid white;
+	margin-bottom:$typo-margin-vertical;
+	
+	h2{
+		@extend .offscreen;
+	}
+	.texte{
+		background-color:white;
+		padding:($typo-margin-vertical/2);
+	}
+	p{
+		margin:0;
+	}
+	
+	@include media($bp-medium-plus-up){
+		border-width:$typo-margin-vertical;
+	}
+}

@@ -15,8 +15,9 @@
 		margin:0;
 	}
 	a{
-		display:block;
 		color:$couleur-texte;
+		display:block;
+		letter-spacing:0.1em;
 	}
 	.search {
 		/* On enlève ça pour l'instant en attendant de trouver comme l'afficher mais mieux */

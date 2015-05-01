@@ -2,7 +2,7 @@
 /* Palette de couleur */
 $couleur-beige:#ced2cd; //#dee0df; #CFD2CC / #CCD0CB / fond PDF : #EEEFEF
 $couleur-marron:#5d4c3f;
-$couleur-orange:#F6401F;
+$couleur-orange:#ff5420; //#F6401F;
 $couleur-fonce:#949896;
 // email : #949896 / PDF : #90908F / plus clair : #D4D4D3 / recherche : #DEE0DF
 
@@ -15,4 +15,4 @@ $typo-line-height: 1.5;
 $typo-margin-vertical: ($typo-line-height)*1em;
 $typo-font-text: Merriweather, Georgia, serif;
 $typo-font-heading: 'Roboto Condensed', Arial Black,Arial Bold,Gadget,sans-serif, sans;
-$typo-font-alt: 'Roboto', "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif, sans;
+$typo-font-alt: 'Roboto', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif, sans;
