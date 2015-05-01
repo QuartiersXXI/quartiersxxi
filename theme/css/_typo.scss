@@ -7,6 +7,7 @@ body{
 	
 	@include media($bp-medium-plus-up){
 		background:$couleur-beige url('../images/fond-immeubles.png') 47% top no-repeat;
+		border:$typo-margin-vertical solid white;
 	}
 }
 
