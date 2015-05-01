@@ -16,9 +16,9 @@
 			line-height:1;
 			margin:0;
 		}
-		.introduction{
+		/*.introduction{
 			display:none;
-		}
+		}*/
 		a{
 			color:white;
 		}
@@ -33,7 +33,7 @@
 				left:-($typo-margin-vertical*2);
 				position:absolute;
 				top:30%;
-				width:50%;
+				max-width:50%;
 				
 				&:before{
 					content:"";
