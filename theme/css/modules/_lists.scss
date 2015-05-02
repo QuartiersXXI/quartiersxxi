@@ -56,7 +56,16 @@
 }
 
 /* Les plus lus n'ont que le titre */
-.plus_lus{
+.liste.plus_lus{
+	border-left:1px solid $couleur-orange;
+	padding:$typo-margin-vertical/2;
+	
+	.liste-items{
+		margin:0;
+	}
+	.item{
+		margin:($typo-margin-vertical/2) 0;
+	}
 	.spip_logos, .publication, .introduction, .postmeta{
 		display:none;
 	}
