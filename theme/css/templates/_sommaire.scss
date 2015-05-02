@@ -24,6 +24,11 @@
 		}
 	}
 	
+	/* On applique les polaroïds pour les actus */
+	.actus{
+		@extend .polaroid;
+	}
+	
 	/* En grand écran, on passe les actus et le reste en colonnes */
 	@include media($bp-medium-plus-up){
 		.focus{

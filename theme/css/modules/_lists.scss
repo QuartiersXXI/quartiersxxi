@@ -19,6 +19,36 @@
 	}
 }
 
+/* Liste en sorte de polaroïd */
+.liste.polaroid{
+	.item{
+		background-color:white;
+		margin-bottom:$typo-margin-vertical;
+		min-height:6em;
+		padding:$typo-margin-vertical/2;
+		position:relative;
+	}
+	.entry-title{
+		background-color:white;
+		font-family:$typo-font-alt;
+		font-size:1.5em;
+		font-style:italic;
+		font-weight:bold;
+		line-height:1;
+		padding:0.5em;
+		position:absolute;
+		bottom:0;
+		left:0;
+		right:0;
+	}
+	a{
+		color:$couleur-texte;
+	}
+	.introduction, .publication{
+		display:none;
+	}
+}
+
 /* Les plus lus n'ont que le titre */
 .plus_lus{
 	.spip_logos, .publication, .introduction, .postmeta{

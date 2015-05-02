@@ -1,10 +1,11 @@
 <BOUCLE_vevent(EVENEMENTS){id_evenement=#ENV{id,#ENV{id_evenement}}}{tout}>
 [(#SET{annee,#DATE_DEBUT|annee})][(#SET{mois,#DATE_DEBUT|nom_mois})][(#SET{jour,#DATE_DEBUT|jour})]
 <article class="entry evenement vevent id_#ID_EVENEMENT" itemscope itemtype="http://schema.org/Event">
+	[(#LOGO_EVENEMENT|image_passe_partout{#ENV{largeur_logo,96},#ENV{hauteur_logo,96}}|image_recadre{#ENV{largeur_logo,96},#ENV{hauteur_logo,96}}|responsive_logo)]
 	<span class="date_debut #EDIT{date_debut}"><:agenda:date_fmt_agenda_label{annee=#GET{annee},mois=#GET{mois},jour=#GET{jour}}:></span>
 	<strong class="summary entry-title #EDIT{titre}">
 		<a itemprop="url" class="url" href="[(#URL_EVENEMENT)]">
-			[(#LOGO_EVENEMENT|image_passe_partout{#ENV{largeur_logo,96},#ENV{hauteur_logo,96}}|image_recadre{#ENV{largeur_logo,96},#ENV{hauteur_logo,96}}|responsive_logo)]<span itemprop="name">#TITRE</span>
+			<span itemprop="name">#TITRE</span>
 		</a>
 	</strong>
 	<meta itemprop="startDate" content="[(#DATE_DEBUT|date_iso)]" />
