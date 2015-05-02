@@ -8,7 +8,7 @@ textarea, input[type=text], input.text, select{
 	background-color:white;
 	/*border:$typo-margin-vertical/3/8 solid grey;*/
 	border:0;
-	box-shadow:-($typo-margin-vertical/4) ($typo-margin-vertical/4) 0 0 darken($couleur-beige, 10%);
+	box-shadow:-($typo-margin-vertical/4) ($typo-margin-vertical/4) 0 0 lighten($couleur-fonce, 10%);
 	color:$couleur-fonce;
 	font-family:$typo-font-alt;
 	font-size:1em;
@@ -22,7 +22,7 @@ textarea, input[type=text], input.text, select{
 	&:focus{
 		background-color:white;
 		/*border-color:$couleur-texte;*/
-		box-shadow:-($typo-margin-vertical/4) ($typo-margin-vertical/4) 0 0 darken($couleur-beige, 20%);
+		box-shadow:-($typo-margin-vertical/4) ($typo-margin-vertical/4) 0 0 $couleur-fonce;
 		font-weight:bold;
 	}
 }

@@ -27,6 +27,10 @@
 	/* On applique les polaroïds pour les actus */
 	.actus{
 		@extend .polaroid;
+		
+		h2{
+			@extend .offscreen;
+		}
 	}
 	
 	/* En grand écran, on passe les actus et le reste en colonnes */

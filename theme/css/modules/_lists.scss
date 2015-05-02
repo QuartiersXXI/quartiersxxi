@@ -8,7 +8,12 @@
 	}
 }
 
-// On style les listes utilisées dans les trucs Z
+/* Les conteneurs de listes */
+.liste{
+	margin-bottom:$typo-margin-vertical;
+}
+
+/* On style les listes utilisées dans les trucs Z */
 .liste-items{
 	@extend .list-none;
 	
@@ -22,6 +27,7 @@
 /* Liste en sorte de polaroïd */
 .liste.polaroid{
 	.item{
+		@extend .link-block-wrapper;
 		background-color:white;
 		margin-bottom:$typo-margin-vertical;
 		min-height:6em;
@@ -56,5 +62,38 @@
 	}
 	strong{
 		font-weight:normal;
+	}
+}
+
+/* Liste d'événements */
+.liste.evenements{
+	.publication{
+		font-family:$typo-font-alt;
+		font-size:0.9em;
+		line-height:1.5em;
+		margin:0;
+	}
+	abbr{
+		border:none;
+	}
+	time{
+		background-color:lighten($couleur-fonce, 10%);
+		padding:0 0.2em;
+	}
+	.lieu{
+		font-family:$typo-font-alt;
+		font-size:0.9em;
+		line-height:1.5em;
+	}
+}
+
+/* Les évenements uniquement futurs */
+.liste.evenements-futurs{
+	background-color:darken($couleur-beige, 5%);
+	border-left:1px solid black;
+	padding:$typo-margin-vertical/2;
+	
+	.introduction{
+		display:none;
 	}
 }
