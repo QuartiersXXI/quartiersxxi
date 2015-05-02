@@ -33,10 +33,13 @@
  * Ce sont des modèles cohérents, réutilisables quelque soit l'endroit où on les place
  */
 @import "modules/text-fadeout"; // Masquer un bas de texte avec un dégradé
+@import "modules/icons"; // Nécessaire à toutes les icônes
+@import "modules/icons-codes"; // Code pour chaque icône
 // @import "modules/buttons"; // Tous les boutons et leurs variantes
 @import "modules/forms"; // Les formulaires
 @import "modules/lists"; // Les différentes listes du site
 @import "modules/focus"; // Les blocs de mise en avant
+@import "modules/social"; // Le bloc des liens sociaux
 // @import "modules/illustrations"; // Les images et légendes
 // @import "modules/comments" // Les commentaires
 // ...
