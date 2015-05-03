@@ -14,13 +14,21 @@
 		@extend .list-none;
 		margin:0;
 	}
-	.on a{
-		font-weight:bold;
-	}
 	a{
 		color:$couleur-texte;
 		display:block;
-		letter-spacing:0.1em;
+		// letter-spacing:0.1em;
+	}
+	.on a{
+		font-weight:bold;
+	}
+	.lieux a{
+		@extend .icon;
+		@extend .icon-location;
+	}
+	.themes a{
+		@extend .icon;
+		@extend .icon-tags;
 	}
 	.search {
 		/* On enlève ça pour l'instant en attendant de trouver comme l'afficher mais mieux */
@@ -44,14 +52,12 @@
 				width:99%;
 			}
 		}*/
-		a{
-			display:inline;
-		}
 		.item{
 			display:inline-block;
 			line-height:$typo-line-height;
 			margin:0;
 			padding:0;
+			position:relative;
 			/*vertical-align:top;
 			
 			&:first-child{
@@ -68,6 +74,9 @@
 				content:'';
 			}
 		}
+		a{
+			display:inline;
+		}
 		.on a{
 			@include transform-origin(center center);
 			-webkit-transform: transform;
@@ -76,6 +85,13 @@
 			-o-transform: rotate(-12deg);
 			transform: rotate(-12deg);
 			display:inline-block;
+		}
+		.lieux a, .themes a{
+			display:inline-block;
+			overflow:hidden;
+			vertical-align:bottom;
+			white-space:nowrap;
+			width:1.4em;
 		}
 		.search{
 			position:absolute;
