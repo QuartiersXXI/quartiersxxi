@@ -30,6 +30,7 @@
 		background-color:white;
 		margin-bottom:$typo-margin-vertical;
 		padding:$typo-margin-vertical/2;
+		position:relative;
 	}
 	article{
 		@extend .link-block-wrapper;
@@ -47,6 +48,20 @@
 		bottom:0;
 		left:0;
 		right:0;
+	}
+	.rubrique{
+		background-color:$couleur-orange;
+		color:white;
+		font-family:$typo-font-alt;
+		font-size:1.5em;
+		left:-0.5em;
+		line-height:1;
+		margin:0;
+		padding:0.5em;
+		position:absolute;
+		text-transform:uppercase;
+		top:1em;
+		z-index:10;
 	}
 	a{
 		color:$couleur-texte;
