@@ -15,7 +15,7 @@
 		<BOUCLE_resultats(ARTICLES)
 			{id_article?}
 			{id_secteur?}
-			{enfants?}
+			{branche?}
 			{recherche?}
 			{tri #ENV{par,#ENV{recherche}|?{points,date}},#GET{defaut_tri}}
 			{!id_article IN #ENV{articles_exclus,#ARRAY}}
