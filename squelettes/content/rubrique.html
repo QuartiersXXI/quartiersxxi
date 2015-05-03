@@ -22,7 +22,9 @@
 					<BOUCLE_sousrub_dernier(ARTICLES){id_rubrique}{!par date}{0,1}>
 					<article class="article">
 						[(#LOGO_ARTICLE|image_passe_partout{400,300}|image_recadre{400,300}|responsive_logo)]
-						<strong class="titre"><a href="#URL_ARTICLE">#TITRE</a></strong>
+						<strong class="titre">
+							<a href="#URL_ARTICLE">#TITRE</a>
+						</strong>
 						<p class="publication">[<time pubdate="pubdate" datetime="[(#DATE|date_iso)]"><i class="icon-calendar"></i> (#DATE|affdate_jourcourt)</time>]</p>
 						[<div class="#EDIT{intro} introduction entry-content">(#INTRODUCTION{#ENV{coupe,200}})</div>]
 					</article>
@@ -35,29 +37,45 @@
 		</div>
 		</B_sousrub>
 		
-		#SET{array_adoption,#ARRAY}
-		<BOUCLE_articles_adoption(ARTICLES){enfants #ENV{id_rubrique}}>
-		#SET{array_adoption,#GET{array_adoption}|push{#ID_ARTICLE}}
-		</BOUCLE_articles_adoption>
-		<BOUCLE_articles_biologiques(ARTICLES){id_rubrique}{0,1}>
-		#SET{array_adoption,#GET{array_adoption}|push{#ID_ARTICLE}}
-		</BOUCLE_articles_biologiques>
+		[(#REM) On affiche un focus pour le premier article ]
+		#SET{exclus,#LISTE}
+		<B_une>
+		<div class="focus">
+			<h2>Focus</h2>
+			<BOUCLE_une(ARTICLES){enfants}{!par date}{0,1}>
+			<article class="item">
+				[(#LOGO_ARTICLE
+					|image_passe_partout{#ENV{width,1200},#ENV{height,600}}
+					|image_recadre{#ENV{width,1200},#ENV{height,600}}
+					|image_aplatir{jpg,ffffff}
+					|inserer_attribut{alt,#TITRE|sinon{#ENV{titre}|concat{" (illustration)"}}}
+					|adaptive_images{#ENV{width,1200}})]
+				<div class="texte">
+					<h3 class="titre">
+						<a href="#URL_ARTICLE"><span[ class="(#EDIT{titre})"]>#TITRE</span></a>
+					</h3>
+					[<p class="[(#EDIT{texte}) ]introduction">(#TEXTE|couper{200,'…'})</p>]
+				</div>
+			</article>
+			#SET{exclus,#LISTE{#ID_ARTICLE}}
+			</BOUCLE_une>
+		</div>
+		</B_une>
 		
-		
-		<BOUCLE_articles(ARTICLES){id_article IN #GET{array_adoption}}{0,1}>
-			<div class="liste articles">
-			<INCLURE{fond=liste/articles-resume-adoption,env,ajax,array_adoption=#GET{array_adoption}} />
-			</div>
-		</BOUCLE_articles>
+		<div class="liste articles">
+			<INCLURE{fond=liste/articles-resume,
+				articles_exclus=#GET{exclus},
+				titre=Tous les articles,
+				largeur_logo=400,hauteur_logo=300,
+				pagination=12,
+				message_aucun="",
+				env,ajax} />
+		</div>
 	</div>
 
 	<aside>
 		[(#REM) Gestion du portfolio et des documents ]
 		[(#INCLURE{fond=inclure/documents,id_rubrique})]
 	</aside>
-
-	<footer>
-		[<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>]
-	</footer>
 </section>
 </BOUCLE_content>
