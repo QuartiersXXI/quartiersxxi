@@ -1,6 +1,8 @@
 
 /* Chemin de navigation hiérarchique */
 .breadcrumb{
+	font-family:$typo-font-alt;
+	
 	.breadcrumb-items{
 		@extend .list-none;
 	}
