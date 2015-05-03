@@ -1,15 +1,13 @@
 
 /* Les choses à mettre en avant (accueil ou rubrique) */
 .focus{
+	@extend .link-block-wrapper;
+	background-color:white;
 	border:($typo-margin-vertical/2) solid white;
 	margin-bottom:$typo-margin-vertical;
 	
 	h2{
 		@extend .offscreen;
-	}
-	.texte{
-		background-color:white;
-		padding:($typo-margin-vertical/2);
 	}
 	p{
 		margin:0;
@@ -17,5 +15,68 @@
 	
 	@include media($bp-medium-plus-up){
 		border-width:$typo-margin-vertical;
+	}
+}
+
+/* Version du focus avec le texte en flottant par-dessus */
+.focus-flottant{
+	border-color:$couleur-fonce;
+	
+	.texte{
+		background-color:$couleur-orange;
+		color:white;
+		padding:($typo-margin-vertical/2);
+	}
+	.titre{
+		font-family:$typo-font-alt;
+		font-size:1.5em;
+		line-height:1;
+		margin:0;
+	}
+	/*.introduction{
+		display:none;
+	}*/
+	a{
+		color:white;
+	}
+	
+	@include media($bp-medium-plus-up){
+		position:relative;
+		
+		.texte{
+			left:-($typo-margin-vertical*2);
+			position:absolute;
+			top:30%;
+			max-width:50%;
+			
+			&:before{
+				content:"";
+				border-left:2px solid black;
+				position:absolute;
+				bottom:0;
+				left:-$typo-margin-vertical;
+				right:0;
+				top:0;
+			}
+		}
+		.titre{
+			font-size:2em;
+			line-height:1.5;
+		}
+	}
+}
+
+/* Version du focus avec le texte à droite de l'image */
+.focus-colonnes{
+	@include media($bp-medium-plus-up){
+		.item{
+			@include row();
+		}
+		.adapt-img-wrapper{
+			@include span-columns(8);
+		}
+		.texte{
+			@include span-columns(4);
+		}
 	}
 }

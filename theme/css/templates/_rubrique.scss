@@ -1,15 +1,21 @@
 
-/* Pour toutes les rubriques */
-.sous_rubriques{
-	@extend .polaroid;
-	
-	@include media($bp-medium-plus-up){
-		@include row();
+.page_rubrique{
+	/* Pour toutes les rubriques */
+	.sous_rubriques{
+		@extend .polaroid;
 		
-		.item{
-			@include span-columns(4);
-			@include omega(3n);
-			min-height:12em;
+		@include media($bp-medium-plus-up){
+			@include row();
+			
+			.item{
+				@include span-columns(4);
+				@include omega(3n);
+				min-height:12em;
+			}
 		}
+	}
+	
+	.focus{
+		@extend .focus-colonnes;
 	}
 }
