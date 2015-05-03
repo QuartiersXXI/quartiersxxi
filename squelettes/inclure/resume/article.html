@@ -15,7 +15,7 @@
 </BOUCLE_resume_rubrique>
 <article class="entry article hentry">
 	[(#ENV{logo_rubrique,' '}|?{#LOGO_ARTICLE_RUBRIQUE,#LOGO_ARTICLE}|image_passe_partout{#ENV{largeur_logo,96},#ENV{hauteur_logo,96}}|image_recadre{#ENV{largeur_logo,96},#ENV{hauteur_logo,96}}|responsive_logo)]
-	<strong class="entry-title">
+	<strong class="titre entry-title">
 		<a href="#GET{url}" rel="bookmark">
 			#GET{titre}
 		</a>

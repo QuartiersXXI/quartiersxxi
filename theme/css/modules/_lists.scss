@@ -27,21 +27,22 @@
 /* Liste en sorte de polaroïd */
 .liste.polaroid{
 	.item{
-		@extend .link-block-wrapper;
 		background-color:white;
 		margin-bottom:$typo-margin-vertical;
-		min-height:6em;
 		padding:$typo-margin-vertical/2;
-		position:relative;
 	}
-	.entry-title{
+	article{
+		@extend .link-block-wrapper;
+		min-height:6em;
+	}
+	.titre{
 		background-color:white;
 		font-family:$typo-font-alt;
 		font-size:1.5em;
 		font-style:italic;
 		font-weight:bold;
 		line-height:1;
-		padding:0.5em;
+		padding-top:0.5em;
 		position:absolute;
 		bottom:0;
 		left:0;
@@ -50,7 +51,7 @@
 	a{
 		color:$couleur-texte;
 	}
-	.introduction, .publication{
+	.postmeta, .introduction, .publication{
 		display:none;
 	}
 }
@@ -76,6 +77,14 @@
 
 /* Liste d'événements */
 .liste.evenements{
+	.item{
+		@extend .link-block-wrapper;
+		margin-bottom:$typo-margin-vertical;
+		
+		&:last-child{
+			margin-bottom:0;
+		}
+	}
 	.publication{
 		font-family:$typo-font-alt;
 		font-size:0.9em;
@@ -93,13 +102,6 @@
 		font-family:$typo-font-alt;
 		font-size:0.9em;
 		line-height:1.5em;
-	}
-	.item{
-		margin-bottom:$typo-margin-vertical;
-		
-		&:last-child{
-			margin-bottom:0;
-		}
 	}
 }
 

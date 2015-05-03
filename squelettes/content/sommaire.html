@@ -12,14 +12,12 @@
 			<h2>Focus</h2>
 			<BOUCLE_une(ARTICLES){!par date}{0,1}>
 			<article class="item">
-				<BOUCLE_illustration(DOCUMENTS){id_article}{extension IN jpg,png,gif}{par num titre,titre}{0,1}>
-				[(#FICHIER
+				[(#LOGO_ARTICLE
 					|image_passe_partout{#ENV{width,1200},#ENV{height,600}}
 					|image_recadre{#ENV{width,1200},#ENV{height,600}}
 					|image_aplatir{jpg,ffffff}
 					|inserer_attribut{alt,#TITRE|sinon{#ENV{titre}|concat{" (illustration)"}}}
 					|adaptive_images{#ENV{width,1200}})]
-				</BOUCLE_illustration>
 				<div class="texte">
 					<h3 class="titre">
 						<a href="#URL_ARTICLE"><span[ class="(#EDIT{titre})"]>#TITRE</span></a>
