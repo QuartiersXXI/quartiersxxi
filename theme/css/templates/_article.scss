@@ -1,0 +1,22 @@
+
+/* Pour les articles */
+.page_article{
+	.cartouche h1{
+		text-align:center;
+	}
+	
+	#content .main{
+		background-color:white;
+		padding:$typo-margin-vertical;
+		margin:0 -1em;
+	}
+	
+	@include media($bp-medium-plus-up){
+		#content .main{
+			font-size:1.1em;
+			margin:0 auto;
+			max-width:50em;
+			padding:$typo-margin-vertical*2;
+		}
+	}
+}
