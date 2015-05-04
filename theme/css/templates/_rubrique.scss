@@ -18,4 +18,16 @@
 	.focus{
 		@extend .focus-colonnes;
 	}
+	
+	.articles.branche{
+		@extend .polaroid;
+		
+		.liste-items{
+			@include row();
+		}
+		.item{
+			@include span-columns(4);
+			@include omega(3n);
+		}
+	}
 }
