@@ -13,8 +13,9 @@
 	
 	@include media($bp-medium-plus-up){
 		#content{
-			padding:$typo-margin-vertical*2 $typo-margin-vertical*3;
+			box-shadow:-($typo-margin-vertical/4) ($typo-margin-vertical/4) 0 0 lighten($couleur-fonce, 10%);
 			margin:0;
+			padding:$typo-margin-vertical*2 $typo-margin-vertical*3;
 			
 			.main{
 				font-size:1.1em;
