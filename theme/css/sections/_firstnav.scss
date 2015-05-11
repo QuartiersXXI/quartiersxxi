@@ -2,6 +2,7 @@
 /* Menu principal */
 .firstnav{
 	clear:both;
+	display:none;
 	margin-bottom:$typo-margin-vertical*2;
 	font-family:$typo-font-alt;
 	font-weight:300;
@@ -59,6 +60,8 @@
 	}
 	
 	@include media($bp-medium-plus-up){
+		display:block !important;
+		
 		/*.menu-items{
 			line-height:0;
 			text-align:justify;
