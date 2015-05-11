@@ -25,10 +25,10 @@ h6,
 .h6{
 	font-family:$typo-font-heading;
 }
-h1{
+h1, .h1{
 	font-weight:bold;
 }
-h2{
+h2, .h2{
 	font-family:$typo-font-alt;
 	font-weight:300;
 	text-transform:uppercase;
