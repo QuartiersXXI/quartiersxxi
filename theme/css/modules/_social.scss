@@ -39,9 +39,13 @@
 /* Socialtags */
 div.socialtags {
 	float: right;
-	margin-right: -2em;
+	margin-right: -1em;
 	
 	ul li {
 		display: block;
+	}
+	
+	@include media($bp-medium-plus-up){
+		margin-right:-2em;
 	}
 }
