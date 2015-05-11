@@ -6,33 +6,20 @@
 			<small class="#EDIT{soustitre} soustitre">(#SOUSTITRE)</small>
 		]</h1>
 		
-		[(#REM) Inclure le modele des liens de traductions ]
 		<div class="postmeta">
-			<p class="info-publi">
 			[(#ID_RUBRIQUE|>{0}|oui)
+			<p class="publication">
 				[<span class="auteurs"><:par_auteur:> (#LESAUTEURS)</span>]
-				<br><abbr class="published" title="[(#DATE|date_iso)]">Publié le [(#DATE|nom_jour) ][(#DATE|affdate)]</abbr>
-				[(#MAJ|!={#DATE}|oui)
-				<br><abbr class="published" title="[(#DATE|date_iso)]">Modifié le [(#MAJ|nom_jour) ][(#MAJ|affdate)]</abbr>
-				]
-			]
+				<time pubdate="pubdate" class="published" title="[(#DATE|date_iso)]">[(#DATE|affdate_jourcourt)]</time>
 			</p>
+			]
 			#MODELE{article_traductions}
 			<BOUCLE_nb_commentaires(FORUMS) {id_article}{plat} />[(#TOTAL_BOUCLE|oui)
 			<span class="comments">
-				<span class="sep">|</span>
+				<span class="sep"> | </span>
 				<a[ href="(#REM|ancre_url{comments})"] [title="(#TOTAL_BOUCLE|singulier_ou_pluriel{zcore:info_1_commentaire,zcore:info_nb_commentaires}|attribut_html)"]>[<i class="icon-comment"></i> (#TOTAL_BOUCLE)]</a>
 			</span>
 			]<//B_nb_commentaires>
-			<B_tags>
-			<div class="liste tags">
-				<ul class="liste-items">
-					<BOUCLE_tags(RUBRIQUES){parents_indirects}{par num titre,titre}>
-					<li><a class="item" href="#URL_RUBRIQUE">#TITRE</a></li>
-					</BOUCLE_tags>
-				</ul>
-			</div>
-			</B_tags>
 		</div>
 	</header>
 
@@ -46,7 +33,20 @@
 	<footer>
 		[<div class="#EDIT{ps} ps surlignable"><h2><:info_ps:></h2>(#PS|adaptive_images)</div>]
 		[<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>]
-		<p class="publication"><time pubdate="pubdate" datetime="[(#DATE|date_iso)]">[(#DATE|nom_jour) ][(#DATE|affdate)]</time></p>
+		[(#MAJ|affdate|!={#DATE|affdate}|oui)
+		<p class="publication">
+			<time class="modified" title="[(#DATE|date_iso)]">Dernière modification le [(#MAJ|affdate_jourcourt)]</time>
+		</p>
+		]
+		<B_tags>
+		<div class="liste tags">
+			<ul class="liste-items">
+				<BOUCLE_tags(RUBRIQUES){parents_indirects}{par num titre,titre}>
+				<li class="item"><a href="#URL_RUBRIQUE">#TITRE</a></li>
+				</BOUCLE_tags>
+			</ul>
+		</div>
+		</B_tags>
 	</footer>
 
 	<aside>

@@ -1,25 +1,75 @@
 
 /* Pour les articles */
 .page_article{
-	.cartouche h1{
-		text-align:center;
+	.cartouche {
+		h1{
+			text-align:center;
+		}
+		.publication{
+			text-align:right;
+			margin-bottom:$typo-margin-vertical*2;
+		}
+		.auteurs{
+			display:block;
+			font-size:1.5em;
+			line-height:1;
+		}
+		.published{
+			display:block;
+			font-size:0.9em;
+			line-height:$typo-line-height / 0.9;
+		}
 	}
-	
-	#content{
+	.breadcrumb-items{
+		background-color:$couleur-orange;
+		color:white;
+		display:inline-block;
+		font-family:$typo-font-alt;
+		margin:0;
+		padding:0 0.5em;
+		text-transform:uppercase;
+		
+		a{
+			color:white;
+		}
+	}
+	.content{
 		background-color:white;
-		padding:$typo-margin-vertical;
 		margin:0 -1em;
+		margin-bottom:$typo-margin-vertical;
+		padding:$typo-margin-vertical;
+		position:relative;
+		
+		.tags{
+			text-align:center;
+		}
+		.tags .liste-items, .tags .item{
+			display:inline-block;
+			margin:0;
+		}
+		footer .publication{
+			font-size:0.9em;
+			line-height:$typo-line-height / 0.9;
+			margin-bottom:$typo-margin-vertical / 0.9;
+			text-align:right;
+		}
 	}
 	
 	@include media($bp-medium-plus-up){
-		#content{
+		.content{
 			box-shadow:-($typo-margin-vertical/4) ($typo-margin-vertical/4) 0 0 lighten($couleur-fonce, 10%);
-			margin:0;
+			margin-left:0;
+			margin-right:0;
 			padding:$typo-margin-vertical*2 $typo-margin-vertical*3;
 			
 			.main{
 				font-size:1.1em;
 			}
+		}
+		.cartouche .publication{
+			max-width:50%;
+			margin-left:auto;
+			margin-right:auto;
 		}
 	}
 }

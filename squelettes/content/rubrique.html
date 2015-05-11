@@ -4,7 +4,9 @@
 	<header class="cartouche">
 		[(#LOGO_RUBRIQUE|image_reduire{200,200})]
 		<h1 class="#EDIT{titre}">#TITRE</h1>
-		[<p class="publication"><time pubdate="pubdate" datetime="[(#DATE|date_iso)]"><:dernier_ajout:> : (#DATE|affdate_jourcourt).</time></p>]
+		[(#REM)
+			[<p class="publication"><time pubdate="pubdate" datetime="[(#DATE|date_iso)]"><:dernier_ajout:> : (#DATE|affdate_jourcourt).</time></p>]
+		]
 	</header>
 
 	<div class="main">
@@ -54,6 +56,10 @@
 					<h3 class="titre">
 						<a href="#URL_ARTICLE"><span[ class="(#EDIT{titre})"]>#TITRE</span></a>
 					</h3>
+					<p class="publication">
+						<time class="published" pubdate="pubdate" datetime="[(#DATE|date_iso)]">[(#DATE|affdate_jourcourt)]</time><B_focus_auteurs>,
+						par <BOUCLE_focus_auteurs(AUTEURS){id_article}{par nom}{", "}>#NOM</BOUCLE_focus_auteurs>
+					</p>
 					[<p class="[(#EDIT{texte}) ]introduction">(#TEXTE|couper{200,'…'})</p>]
 				</div>
 			</article>
@@ -69,6 +75,7 @@
 				largeur_logo=400,hauteur_logo=300,
 				pagination=12,
 				message_aucun="",
+				id_secteur='',
 				env,ajax} />
 		</div>
 		

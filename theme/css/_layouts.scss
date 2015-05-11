@@ -4,7 +4,7 @@
 	@include outer-container;
 	padding:0 1em;
 	
-	@include media($bp-large-up){
+	@include media($bp-medium-plus-up){
 		padding:0;
 	}
 }

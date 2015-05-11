@@ -9,7 +9,7 @@
 	h2{
 		@extend .offscreen;
 	}
-	p{
+	.introduction{
 		margin:0;
 	}
 	
@@ -68,6 +68,16 @@
 
 /* Version du focus avec le texte à droite de l'image */
 .focus-colonnes{
+	.titre{
+		@extend .h1;
+	}
+	.publication{
+		font-family:$typo-font-alt;
+		font-size:0.9em;
+		line-height:$typo-line-height / 0.9;
+		margin-top:-$typo-margin-vertical;
+	}
+	
 	@include media($bp-medium-plus-up){
 		.item{
 			@include row();
