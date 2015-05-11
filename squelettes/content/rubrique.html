@@ -13,6 +13,7 @@
 		<div class="liste rubriques sous_rubriques">
 			<ul class="liste-items">
 				<BOUCLE_sousrub(RUBRIQUES){id_parent}{par num titre,titre}>
+				<B_sousrub_dernier>
 				<li class="item">
 					<h2 class="rubrique">#TITRE</h2>
 					
@@ -30,6 +31,7 @@
 					
 					<a class="tout" href="#URL_RUBRIQUE">Tous les articles de #TITRE</a>
 				</li>
+				</B_sousrub_dernier>
 				</BOUCLE_sousrub>
 			</ul>
 		</div>
