@@ -12,11 +12,11 @@
 
 @font-face {
     font-family: 'Roboto Condensed';
-    src: url('robotocondensed-regular.eot');
-    src: url('robotocondensed-regular.eot?#iefix') format('embedded-opentype'),
-         url('robotocondensed-regular.woff2') format('woff2'),
-         url('robotocondensed-regular.woff') format('woff'),
-         url('robotocondensed-regular.ttf') format('truetype');
+    src: url('../polices/robotocondensed-regular.eot');
+    src: url('../polices/robotocondensed-regular.eot?#iefix') format('embedded-opentype'),
+         url('../polices/robotocondensed-regular.woff2') format('woff2'),
+         url('../polices/robotocondensed-regular.woff') format('woff'),
+         url('../polices/robotocondensed-regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
