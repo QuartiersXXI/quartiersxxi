@@ -37,8 +37,10 @@ textarea, input[type=text], input.text, select{
 	}
 	.editer{
 		list-style:none;
+		margin-bottom:$typo-margin-vertical;
 		
 		.erreur_message{
+			color:$couleur-orange;
 		}
 	}
 	/*.editer{
