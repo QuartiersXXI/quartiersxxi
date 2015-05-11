@@ -32,11 +32,29 @@
 	}
 	.search {
 		/* On enlève ça pour l'instant en attendant de trouver comme l'afficher mais mieux */
-		label,input.submit{
+		label{
 			@extend .offscreen;
 		}
-		input.text{
+		.text{
+			padding-right:2.5em;
 			width:100%;
+		}
+		.submit{
+			@extend .icon;
+			@extend .icon-search;
+			background-color:white;
+			border:0;
+			position:absolute;
+			right:0;
+			z-index:0;
+			
+			span{
+				display:inline-block;
+				text-indent:-10000px;
+			}
+			&:before{
+				text-indent:0;
+			}
 		}
 	}
 	

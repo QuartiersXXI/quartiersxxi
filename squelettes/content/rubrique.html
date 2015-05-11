@@ -8,8 +8,6 @@
 	</header>
 
 	<div class="main">
-		[<div class="#EDIT{texte} chapo">(#TEXTE|adaptive_images)</div>]
-		
 		[(#REM) Voyons voir en premier s'il y a des sous-rubriques ]
 		<B_sousrub>
 		<div class="liste rubriques sous_rubriques">
@@ -71,6 +69,9 @@
 				message_aucun="",
 				env,ajax} />
 		</div>
+		
+		[(#REM) On affiche la présentation de la rubrique en dernier ]
+		[<div class="#EDIT{texte} chapo">(#TEXTE|adaptive_images)</div>]
 	</div>
 
 	<aside>
