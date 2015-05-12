@@ -5,11 +5,11 @@
 	<div class="zoom">
 		[(#REM) S'il y a une sélection explicite on zoom sur cette image ]
 		<BOUCLE_zoom_selection(DOCUMENTS){id_document}>
-		[(#URL_DOCUMENT|balise_img|inserer_attribut{alt,#TITRE|sinon{#FICHIER|basename}|attribut_html|couper{80}}|adaptive_images{640})]
+		[(#URL_DOCUMENT|balise_img|inserer_attribut{alt,#TITRE|sinon{#FICHIER|basename}|attribut_html|couper{80}}|adaptive_images)]
 		</BOUCLE_zoom_selection>
 			[(#REM) S'il n'y a rien, on prend le premier élément de la liste ]
 			<BOUCLE_zoom_premier(DOCUMENTS){id_article?}{id_rubrique?}{objet?}{id_objet?}{extension IN png,jpg,gif}{par num titre, date}{vu=non}{0,1}>
-			[(#URL_DOCUMENT|balise_img|inserer_attribut{alt,#TITRE|sinon{#FICHIER|basename}|attribut_html|couper{80}}|adaptive_images{640})]
+			[(#URL_DOCUMENT|balise_img|inserer_attribut{alt,#TITRE|sinon{#FICHIER|basename}|attribut_html|couper{80}}|adaptive_images)]
 			</BOUCLE_zoom_premier>
 		<//B_zoom_selection>
 	</div>
