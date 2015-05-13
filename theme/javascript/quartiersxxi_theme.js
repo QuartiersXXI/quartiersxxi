@@ -8,5 +8,11 @@
 					return false;
 				})
 		);
+		
+		// Ouvrir les spip_out en externe
+		$('a.spip_out').on('click', function() {
+			window.open(this.href);
+			return false;
+		});
 	});
 })(jQuery);
