@@ -4,4 +4,4 @@
 <li class="item"><a href="#URL_RUBRIQUE">[(#TITRE|couper{80})]</a><span class="divider"> &gt; </span></li>
 </BOUCLE_ariane_hier>
 </BOUCLE_contexte_rubrique>
-<li class="item [(#ENV{expose,' '}|oui)active]">[(#ID_OBJET|generer_url_entite{#OBJET}|lien_ou_expose{#INFO_TITRE{#OBJET,#ID_OBJET}|sinon{?}|couper{45},#ENV{expose,' '}|?{span}})][<span class="divider">(#ENV{expose,' '}|non)&gt; </span>]</li>
+<li class="item [(#ENV{expose,' '}|oui)active]">[(#ID_OBJET|generer_url_entite{#OBJET}|lien_ou_expose{#INFO_TITRE{#OBJET,#ID_OBJET}|sinon{?}|couper{45, '…'},#ENV{expose,' '}|?{span}})][<span class="divider">(#ENV{expose,' '}|non)&gt; </span>]</li>
