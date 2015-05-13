@@ -47,8 +47,8 @@
 			<BOUCLE_une(ARTICLES){enfants}{!par date}{0,1}>
 			<article class="item">
 				[(#LOGO_ARTICLE
-					|image_passe_partout{#ENV{width,1200},#ENV{height,800}}
-					|image_recadre{#ENV{width,1200},#ENV{height,800}}
+					|image_reduire{1200,0}
+					|image_recadre{4:3,''}
 					|image_aplatir{jpg,ffffff}
 					|inserer_attribut{alt,#TITRE|sinon{#ENV{titre}|concat{" (illustration)"}}}
 					|adaptive_images{#ENV{width,1200}})]
