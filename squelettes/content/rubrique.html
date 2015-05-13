@@ -60,7 +60,7 @@
 						<time class="published" pubdate="pubdate" datetime="[(#DATE|date_iso)]">[(#DATE|affdate_jourcourt)]</time><B_focus_auteurs>,
 						par <BOUCLE_focus_auteurs(AUTEURS){id_article}{par nom}{", "}>#NOM</BOUCLE_focus_auteurs>
 					</p>
-					[<p class="[(#EDIT{texte}) ]introduction">(#TEXTE|couper{200,'…'})</p>]
+					[<p class="[(#EDIT{texte}) ]introduction">(#INTRODUCTION|couper{200,'…'})</p>]
 				</div>
 			</article>
 			#SET{exclus,#LISTE{#ID_ARTICLE}}
