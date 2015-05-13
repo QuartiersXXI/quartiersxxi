@@ -45,13 +45,19 @@
 	@include media($bp-medium-plus-up){
 		.content{
 			box-shadow:-($typo-margin-vertical/4) ($typo-margin-vertical/4) 0 0 lighten($couleur-fonce, 10%);
-			margin-left:0;
-			margin-right:0;
+			margin-left:auto;
+			margin-right:auto;
+			max-width:50em;
 			padding:$typo-margin-vertical*2 $typo-margin-vertical*3;
 			
 			.main{
 				font-size:1.1em;
 			}
+		}
+		.breadcrumb .container{
+			margin-left:auto;
+			margin-right:auto;
+			max-width:50em;
 		}
 		.cartouche .publication{
 			max-width:50%;
