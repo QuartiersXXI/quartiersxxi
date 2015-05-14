@@ -9,12 +9,24 @@
 	h2{
 		@extend .offscreen;
 	}
+	.titre{
+		font-size:1.5em;
+		line-height:1;
+		margin-bottom:0.5em;
+	}
 	.introduction{
+		@include hyphens(auto);
 		margin:0;
+		text-align:justify;
 	}
 	
 	@include media($bp-medium-plus-up){
 		border-width:$typo-margin-vertical;
+		
+		.titre{
+			font-size:2em;
+			line-height:1;
+		}
 	}
 }
 
@@ -29,9 +41,6 @@
 	}
 	.titre{
 		font-family:$typo-font-alt;
-		font-size:1.5em;
-		line-height:1;
-		margin:0;
 	}
 	/*.introduction{
 		display:none;
@@ -59,23 +68,20 @@
 				top:0;
 			}
 		}
-		.titre{
-			font-size:2em;
-			line-height:1.5;
-		}
 	}
 }
 
 /* Version du focus avec le texte à droite de l'image */
 .focus-colonnes{
 	.titre{
-		@extend .h1;
+		font-family:$typo-font-heading;
+		line-height:1;
 	}
 	.publication{
 		font-family:$typo-font-alt;
 		font-size:0.9em;
 		line-height:$typo-line-height / 0.9;
-		margin-top:-$typo-margin-vertical;
+		margin-top:-0.5em;
 	}
 	
 	@include media($bp-medium-plus-up){
