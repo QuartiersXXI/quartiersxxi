@@ -51,9 +51,9 @@
 		position:relative;
 		
 		.texte{
+			bottom:3em;
 			left:-($typo-margin-vertical*2);
 			position:absolute;
-			top:30%;
 			max-width:50%;
 			
 			&:before{
