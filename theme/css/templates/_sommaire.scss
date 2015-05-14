@@ -32,7 +32,13 @@
 			}
 		}
 		.autres_news{
-			@include span-columns(4);
+			@include span-columns(3);
+			@include shift(1);
+			
+			.liste-items{
+				font-size:0.9em;
+				line-height:$typo-line-height / 0.9;
+			}
 		}
 	}
 }
