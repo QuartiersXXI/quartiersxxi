@@ -4,7 +4,7 @@
 	@extend .link-block-wrapper;
 	background-color:white;
 	border:($typo-margin-vertical/2) solid white;
-	margin-bottom:$typo-margin-vertical;
+	margin-bottom:$typo-margin-vertical*2;
 	
 	h2{
 		@extend .offscreen;
