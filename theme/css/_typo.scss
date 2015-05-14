@@ -49,6 +49,7 @@ a{
 		background-color:$couleur-lien !important;
 		color:white !important;
 		outline:0;
+		text-decoration:none;
 	}
 	&:visited{
 		color:$couleur-lien;
