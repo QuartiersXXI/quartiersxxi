@@ -10,6 +10,7 @@
 		@extend .offscreen;
 	}
 	.titre{
+		font-family:$typo-font-heading;
 		font-size:1.5em;
 		line-height:1;
 		margin-bottom:0.5em;
@@ -38,9 +39,6 @@
 		background-color:$couleur-orange;
 		color:white;
 		padding:($typo-margin-vertical/2);
-	}
-	.titre{
-		font-family:$typo-font-alt;
 	}
 	/*.introduction{
 		display:none;
@@ -74,7 +72,6 @@
 /* Version du focus avec le texte à droite de l'image */
 .focus-colonnes{
 	.titre{
-		font-family:$typo-font-heading;
 		line-height:1;
 	}
 	.publication{
