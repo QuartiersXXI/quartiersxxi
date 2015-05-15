@@ -22,6 +22,7 @@
 	}
 	.on a{
 		font-weight:bold;
+		text-decoration:underline;
 	}
 	.lieux a{
 		@extend .icon;
@@ -99,17 +100,17 @@
 		a{
 			display:inline;
 		}
-		.on a{
-			/*@include transform-origin(center center);
+		/*.on a{
+			@include transform-origin(center center);
 			-webkit-transform: transform;
 			-moz-transform: rotate(-12deg);
 			-ms-transform: rotate(-12deg);
 			-o-transform: rotate(-12deg);
-			transform: rotate(-12deg);*/
+			transform: rotate(-12deg);
 			background-color:lighten($couleur-fonce, 10%);
 			box-shadow:0 0 0 0.25em lighten($couleur-fonce, 10%);
 			display:inline-block;
-		}
+		}*/
 		.lieux a, .themes a{
 			display:inline-block;
 			overflow:hidden;
