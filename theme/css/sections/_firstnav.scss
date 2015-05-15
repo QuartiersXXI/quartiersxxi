@@ -33,6 +33,8 @@
 		@extend .icon-tags;
 	}
 	.search {
+		position:relative;
+		
 		/* On enlève ça pour l'instant en attendant de trouver comme l'afficher mais mieux */
 		label{
 			@extend .offscreen;
