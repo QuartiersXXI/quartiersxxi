@@ -61,12 +61,24 @@
 		text-transform:uppercase;
 		top:1em;
 		z-index:10;
+		
+		a{
+			color:white;
+		}
 	}
 	a{
 		color:$couleur-texte;
 	}
 	.postmeta, .introduction, .publication{
 		display:none;
+	}
+	.tout{
+		background-color:$couleur-orange;
+		color:white;
+		display:block;
+		font-family:$typo-font-alt;
+		margin-top:$typo-margin-vertical;
+		text-align:center;
 	}
 }
 
