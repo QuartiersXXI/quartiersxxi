@@ -25,6 +25,10 @@ dl.spip_documents {
 .spip_doc_descriptif {
 	clear:both;
 }
+.spip_doc_titre, .spip_doc_descriptif{
+	font-size:0.8em;
+	line-height:($typo-margin-vertical / 0.8);
+}
 
 /* Les trois variantes center left right */
 .spip_documents_center {
