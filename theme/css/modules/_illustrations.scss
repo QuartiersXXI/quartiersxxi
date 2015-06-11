@@ -1,0 +1,44 @@
+
+/* Les documents affichés dans les contenus */
+.spip_documents {
+	margin-top:$typo-margin-vertical;
+	margin-bottom:$typo-margin-vertical;
+}
+
+.spip_documents,
+.spip_documents_center,
+.spip_doc_titre,
+.spip_doc_descriptif {
+	margin-right:auto;
+	margin-left:auto;
+	max-width:100%;
+	text-align:center;
+}
+dl.spip_documents {
+	dt,dd {
+		margin-left:auto;
+		margin-right:auto;
+		padding-left:0;
+		padding-right:0
+	}
+}
+.spip_doc_descriptif {
+	clear:both;
+}
+
+/* Les trois variantes center left right */
+.spip_documents_center {
+	clear:both;
+	display:block;
+	width:100%;
+}
+.spip_documents_left {
+	float:left;
+	margin:$typo-margin-vertical;
+	margin-left:0;
+}
+.spip_documents_right {
+	float:right;
+	margin:$typo-margin-vertical;
+	margin-right:0;
+}
